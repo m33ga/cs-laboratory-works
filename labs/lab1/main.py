@@ -10,7 +10,7 @@ def main():
         print("2. Decrypt message")
         print("0. Exit")
 
-        choice = input("Choose an option (1-3): ").strip()
+        choice = input("Choose an option (0-2): ").strip()
 
         if choice == "0":
             print("Goodbye!")

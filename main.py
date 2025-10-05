@@ -1,4 +1,4 @@
-from labs.lab1 import main as lab1
+from labs.lab1.main import main as lab1
 
 
 def main():
