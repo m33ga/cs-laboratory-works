@@ -207,3 +207,10 @@ marimo/_lsp/
 __marimo__/
 
 .idea
+*.tex
+*.gz
+*.png
+*.aux
+*.out
+/out
+/auxil
