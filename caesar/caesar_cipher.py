@@ -12,11 +12,12 @@ class CaesarCipher:
                 unique_key_chars.append(char)
                 seen.add(char)
 
-        shifted_alphabet = self.alphabet[offset:] + self.alphabet[:offset]
-        remaining_chars = [char for char in shifted_alphabet if char not in seen]
+        remaining_chars = [char for char in self.alphabet if char not in seen]
 
         cipher_alphabet = "".join(unique_key_chars) + "".join(remaining_chars)
-        return cipher_alphabet
+        shifted_alphabet = cipher_alphabet[offset:] + cipher_alphabet[:offset]
+        print(f"Alphabet used: {shifted_alphabet}")
+        return shifted_alphabet
 
     def encrypt(self, message, offset, key_string=""):
         if key_string:
