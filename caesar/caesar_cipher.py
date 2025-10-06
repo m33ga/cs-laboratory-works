@@ -25,7 +25,7 @@ class CaesarCipher:
                 raise ValueError("Key string must be at least 7 characters long")
 
         for char in message:
-            if not (char.isalpha() or char.isspace()):
+            if not (char.upper() in self.alphabet or char.isspace()):
                 raise ValueError("Message can only contain English letters and spaces")
 
         cipher_alphabet = self._create_cipher_alphabet(offset, key_string)
@@ -46,7 +46,7 @@ class CaesarCipher:
                 raise ValueError("Key string must be at least 7 characters long")
 
         for char in message:
-            if not char.isalpha():
+            if char.upper() not in self.alphabet:
                 raise ValueError("Encrypted message can only contain English letters")
 
         cipher_alphabet = self._create_cipher_alphabet(offset, key_string)
