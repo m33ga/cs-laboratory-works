@@ -1,16 +1,20 @@
 from labs.lab1.main import main as lab1
+from labs.lab3.main import main as lab3
 
 
 def main():
     while True:
         print("Available Labs:")
         print("1. Caesar Cipher Console")
+        print("3. Playfair Cipher Console")
         print("0. Exit")
         try:
             choice = input("\nSelect a lab to run: ").strip()
 
             if choice == "1":
                 lab1()
+            elif choice == "3":
+                lab3()
             elif choice == "0":
                 break
             else:
