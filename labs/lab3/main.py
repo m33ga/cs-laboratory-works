@@ -12,22 +12,21 @@ class PlayfairApp:
         print()
 
     def run(self):
-        print("=== playfair algorithm for the romanian language ===")
+        print("playfair algorithm")
         print("alphabet: a-z with diacritics (ă, â, î, ș, ț)")
-        print("allowed letters: a-z, a-z (30 letters, letter j removed)\n")
+        print("allowed letters: a-z, A-Z (30 letters, letter j removed)\n")
 
         while True:
-            print("\n" + "=" * 50)
             operation = input(
                 "choose operation (1-encrypt, 2-decrypt, 0-exit): "
             ).strip()
 
             if operation == "0":
-                print("goodbye!")
+                print("goodbye")
                 break
 
             if operation not in ["1", "2"]:
-                print("invalid option!")
+                print("invalid option")
                 continue
 
             key = input("enter key (minimum 7 characters): ").strip()
@@ -38,7 +37,7 @@ class PlayfairApp:
 
             if not self.cipher.validate_input(key):
                 print("error: the key contains invalid characters!")
-                print("use only letters a-z, a-z with diacritics (ă, â, î, ș, ț)")
+                print("use only letters a-z, A-Z with diacritics (ă, â, î, ș, ț)")
                 continue
 
             self.cipher.create_matrix(key)

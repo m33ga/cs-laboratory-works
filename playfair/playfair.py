@@ -1,6 +1,7 @@
 class PlayfairCipher:
     def __init__(self):
-        self.alphabet = "AĂÂBCDEFGHIÎKLMNOPQRSȘTȚUVWXYZ"
+        self.alphabet = "AĂÂBCDEFGHIÎJKLMNOPQRSȘTȚUVWXYZ"
+        self.alphabet_matrix = "AĂÂBCDEFGHIÎKLMNOPQRSȘTȚUVWXYZ"
         self.matrix = []
         self.rows = 6
         self.cols = 5
@@ -12,16 +13,16 @@ class PlayfairCipher:
         return True
 
     def create_matrix(self, key):
-        key = key.upper().replace(" ", "")
+        key = key.upper().replace(" ", "").replace("J", "I")
         seen = set()
         key_unique = []
 
         for char in key:
-            if char not in seen and char in self.alphabet:
+            if char not in seen and char in self.alphabet_matrix:
                 seen.add(char)
                 key_unique.append(char)
 
-        for char in self.alphabet:
+        for char in self.alphabet_matrix:
             if char not in seen:
                 key_unique.append(char)
 
@@ -42,7 +43,7 @@ class PlayfairCipher:
         return None, None
 
     def prepare_text(self, text):
-        text = text.upper().replace(" ", "")
+        text = text.upper().replace(" ", "").replace("J", "I")
         prepared = []
         i = 0
 
@@ -120,7 +121,7 @@ class PlayfairCipher:
         return "".join(result)
 
     def decrypt(self, text):
-        text = text.upper().replace(" ", "")
+        text = text.upper().replace(" ", "").replace("J", "I")
         result = []
 
         for i in range(0, len(text), 2):
