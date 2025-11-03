@@ -23,6 +23,8 @@ def main():
                 break
             else:
                 print("Invalid choice.")
+        except KeyboardInterrupt:
+            exit(0)
         except Exception as e:
             print(f"Error running lab: {e}")
 
