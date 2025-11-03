@@ -93,10 +93,4 @@ class DESKeyPlus:
 
         print(f"\nK+ : {self._format_bits(k_plus, 7)}")
 
-        C0 = k_plus[:28]
-        D0 = k_plus[28:]
-
-        print(f"\nC0 (left half):  {self._format_bits(C0, 7)}")
-        print(f"D0 (right half): {self._format_bits(D0, 7)}\n")
-
         return k_plus
